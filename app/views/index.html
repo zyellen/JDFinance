@@ -9,39 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Test</title>
 </head>
-<style medai="screen">
-    html a {
-        color: blue;
-        cursor: pointer;
-        margin: 12px 10px;
-    }
-</style>
 
 <body>
-    <a class="api a">a.html</a>
-    <a class="api b">b.html</a>
+
     <article id="app">
     </article>
-    <script type="text/javascript">
-        //注册路由(创建历史记录)
-        document.querySelectorAll('.api').forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                let link = item.textContent; //获取当前链接 textContent:文本内容包含所有子节点的文本
-                window.history.pushState({ //pushState包括三个参数:
-                    name: 'api' // 1:从第一参数传递
-                }, link, link); // 2.标题 3.真实地址
-            }, false)
-        });
 
-        //监听路由
-        window.addEventListener('popstate', (e) => {
-            console.log({
-                locattion: location.href,
-                state: e.state
-            });
-        }, false)
-    </script>
 </body>
 
 </html>

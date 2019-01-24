@@ -1,3 +1,4 @@
+// eslint-disable-next-line node/no-extraneous-import
 import Vue from "vue"
 import App from "./App.vue"
 import router from "./router"

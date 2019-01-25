@@ -1,12 +1,12 @@
 <template lang="html">
-   <section :class="[cname]">
+   <section :class="cname">
        <swiper :options="options" :not-next-tick="options.notNextTick">
-           <swiper-slipe v-for="item in items" :key="item.href">
-               <router-link :to="{name:item.href}">
+           <swiper-slide v-for="item in items" :key="item.href">
+               <router-link :to="{name: item.href}">
                    <img :src="item.src" alt="">
                 </router-link>
-           </swiper-slipe>
-           <div class="swiper-pagination" v-if="options.pagination"/>
+           </swiper-slide>
+           <div class="swiper-pagination" slot="pagination" v-if="options.pagination"/>
        </swiper>
    </section>
 </template>
@@ -19,9 +19,13 @@ export default {
         swiperSlide,
     },
    props: {
+            cname: {
+           type: String,
+           define: "",
+            },
        options: {
            type: Object,
-           define() {
+           default() {
                return {
                    autoplay: true,
                    loop: true,
@@ -33,11 +37,9 @@ export default {
            },
        },
        items: {
-           type: {
                type: Array,
                default() {
                    return []
-               },
            },
        },
    }
@@ -45,4 +47,5 @@ export default {
 </script>
 
 <style lang="scss">
+ @import "~swiper/dist/css/swiper.css";
 </style>

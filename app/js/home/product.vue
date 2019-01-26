@@ -1,6 +1,7 @@
 <template lang="html">
    <Panel :class="$style.panel" title="众筹新品">
        <section :class="$style.concent">
+           <div class="arrow">更多尖货></div>
            <slider :options="options" :items="items" cname="product-slider"/>
        </section>
    </Panel>
@@ -67,6 +68,14 @@ export default {
      @include panel;
      .concent{
          padding-bottom: 40px;
+         position: relative;
+         &>div{
+             position: absolute;
+             font-size:28px;
+             color:#999;
+             right: 20px;
+             top:-70px;
+         }
      }
  }
 </style>

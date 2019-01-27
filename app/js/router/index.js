@@ -5,6 +5,7 @@ import Router from "vue-router"
 import Home from "../home/index.vue"
 import Money from "../Money/index.vue"
 import Ious from "../ious/index.vue"
+import Raise from "../raise/index.vue"
 // eslint-disable-next-line node/no-unpublished-import
 import "../../css/reset.scss"
 
@@ -23,5 +24,9 @@ export default new Router({
         path: "/ious",
         name: "ious",
         component: Ious,
+    }, {
+        path: "/raise",
+        name: "raise",
+        component: Raise,
     }],
 })
